@@ -19,7 +19,7 @@
 		<script language="JavaScript">
 			var words=["Chandrashekar Venkata Raman","Isaac Newton","Albert Einstein","Max Plank","Werner Heisenberg","Richard Feynamn"]
 			function displayword(){
-				var index=Math.floor(Math.random()*words.length+1)
+				var index=Math.floor(Math.random()*words.length)
 				document.hangman.word.value=words[index]
 			}
 		</script>
@@ -34,7 +34,7 @@
 			<p>
 				<form name="hangman">
 					<input type="text" name="word"/>
-					<input type="button" name="click" value="clikc me" onclick="displayword()"/>
+					<input type="button" name="click" value="New Word" onclick="displayword()"/>
 				</form>
 			</p>
 			<nav>
