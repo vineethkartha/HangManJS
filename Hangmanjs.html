@@ -20,7 +20,20 @@
 			var words=["Chandrashekar Venkata Raman","Isaac Newton","Albert Einstein","Max Plank","Werner Heisenberg","Richard Feynamn"]
 			function displayword(){
 				var index=Math.floor(Math.random()*words.length)
-				document.hangman.word.value=words[index]
+				var cont=""
+				for(var i=0;i<words[index].length;i++)
+				{
+					if(words[index][i]==' ')
+					{
+						cont+="      " ;
+					}
+					else
+					{
+						cont+="__ ";
+					}
+				}
+				document.getElementById("name").innerHTML=cont;
+				
 			}
 		</script>
 	</head>
@@ -31,9 +44,9 @@
 				<h1>Hangman JS</h1>
 			</header>
 			<hr>
+			<p id="name"></p>
 			<p>
 				<form name="hangman">
-					<input type="text" name="word"/>
 					<input type="button" name="click" value="New Word" onclick="displayword()"/>
 				</form>
 			</p>
