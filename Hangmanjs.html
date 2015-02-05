@@ -19,40 +19,44 @@
 		<script language="JavaScript">
 			var gameword
 			var words=["Chandrashekar Venkata Raman","Isaac Newton","Albert Einstein","Max Plank","Werner Heisenberg","Richard Feynamn"]
-			var cont=""
+			var cont=" "
+			var dispword=[]
 			function displayword(){
 				var index=Math.floor(Math.random()*words.length)
 				
 				gameword=words[index]
-				for(var i=0;i<words[index].length;i++)
+				
+				for(var i=0;i<gameword.length;i++)
 				{
+					dispword[i]=''
 					if(words[index][i]==' ')
 					{
-						cont+="&nbsp&nbsp&nbsp&nbsp&nbsp" ;
+						dispword[i]=' ' ;
 					}
 					else
 					{
-						cont+="_ ";
+						dispword[i]='_';
+						//alert(gameword[i])
 					}
 				}
-				document.getElementById("name").innerHTML=cont;
+				document.getElementById("name").innerHTML=dispword;
 				
 			}
 			function disp(letter){
 				for(var i=0;i<gameword.length;i++){
 					if(gameword[i].toUpperCase()==letter)
 					{
-						cont+=letter
-						alert(letter)
+						dispword[i]=letter
+						//alert(letter)
 					}
 					else if(gameword[i]==' ')
 					{
-						cont+="&nbsp&nbsp&nbsp&nbsp&nbsp"
+						dispword[i]=' '
 					}
-					else 
-						cont+="___ "
+					else if(dispword[i]=='_')
+						dispword[i]='_'
 				}
-				document.getElementById("name").innerHTML=cont;
+				document.getElementById("name").innerHTML=dispword;
 			} 
 		</script>
 	</head>
@@ -68,19 +72,37 @@
 				<form name="hangman">
 					<input type="button" name="click" value="New Word" onclick="displayword()"/>
 				</form>
-				<a name="A" href="#" onclick="disp('A')">A</a>
-				<a name="B" href="#" onclick="disp('B')">B</a>
-				<a name="C" href="#" onclick="disp('C')">C</a>
-				<a name="D" href="#" onclick="disp('D')">D</a>
-				<a name="E" href="#" onclick="disp('E')">E</a>
-				<a name="F" href="#" onclick="disp('F')">F</a>
+				<a  href="#" onclick="disp('A')">A</a>
+				<a  href="#" onclick="disp('B')">B</a>
+				<a  href="#" onclick="disp('C')">C</a>
+				<a  href="#" onclick="disp('D')">D</a>
+				<a  href="#" onclick="disp('E')">E</a>
+				<a  href="#" onclick="disp('F')">F</a>
 				
-				<a name="A" href="#" onclick="disp('G')">G</a>
-				<a name="B" href="#" onclick="disp('H')">H</a>
-				<a name="C" href="#" onclick="disp('I')">I</a>
-				<a name="D" href="#" onclick="disp('J')">J</a>
-				<a name="E" href="#" onclick="disp('K')">K</a>
-				<a name="F" href="#" onclick="disp('L')">L</a>
+				<a  href="#" onclick="disp('G')">G</a>
+				<a  href="#" onclick="disp('H')">H</a>
+				<a  href="#" onclick="disp('I')">I</a>
+				<a  href="#" onclick="disp('J')">J</a>
+				<a  href="#" onclick="disp('K')">K</a>
+				<a  href="#" onclick="disp('L')">L</a>
+				
+				<a  href="#" onclick="disp('M')">M</a>
+				<a  href="#" onclick="disp('N')">N</a>
+				<a  href="#" onclick="disp('O')">O</a>
+				<a  href="#" onclick="disp('P')">P</a>
+				<a  href="#" onclick="disp('Q')">Q</a>
+				<a  href="#" onclick="disp('R')">R</a>
+				
+				<a  href="#" onclick="disp('S')">S</a>
+				<a  href="#" onclick="disp('T')">T</a>
+				<a  href="#" onclick="disp('U')">U</a>
+				<a  href="#" onclick="disp('V')">V</a>
+				<a  href="#" onclick="disp('W')">W</a>
+				<a  href="#" onclick="disp('X')">X</a>
+				
+				<a  href="#" onclick="disp('Y')">Y</a>
+				<a  href="#" onclick="disp('Z')">Z</a>
+			
 			</p>
 			<nav>
 				<p>
