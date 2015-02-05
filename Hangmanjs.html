@@ -17,24 +17,43 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 		<script language="JavaScript">
+			var gameword
 			var words=["Chandrashekar Venkata Raman","Isaac Newton","Albert Einstein","Max Plank","Werner Heisenberg","Richard Feynamn"]
+			var cont=""
 			function displayword(){
 				var index=Math.floor(Math.random()*words.length)
-				var cont=""
+				
+				gameword=words[index]
 				for(var i=0;i<words[index].length;i++)
 				{
 					if(words[index][i]==' ')
 					{
-						cont+="      " ;
+						cont+="&nbsp&nbsp&nbsp&nbsp&nbsp" ;
 					}
 					else
 					{
-						cont+="__ ";
+						cont+="_ ";
 					}
 				}
 				document.getElementById("name").innerHTML=cont;
 				
 			}
+			function disp(letter){
+				for(var i=0;i<gameword.length;i++){
+					if(gameword[i].toUpperCase()==letter)
+					{
+						cont+=letter
+						alert(letter)
+					}
+					else if(gameword[i]==' ')
+					{
+						cont+="&nbsp&nbsp&nbsp&nbsp&nbsp"
+					}
+					else 
+						cont+="___ "
+				}
+				document.getElementById("name").innerHTML=cont;
+			} 
 		</script>
 	</head>
 
@@ -49,6 +68,19 @@
 				<form name="hangman">
 					<input type="button" name="click" value="New Word" onclick="displayword()"/>
 				</form>
+				<a name="A" href="#" onclick="disp('A')">A</a>
+				<a name="B" href="#" onclick="disp('B')">B</a>
+				<a name="C" href="#" onclick="disp('C')">C</a>
+				<a name="D" href="#" onclick="disp('D')">D</a>
+				<a name="E" href="#" onclick="disp('E')">E</a>
+				<a name="F" href="#" onclick="disp('F')">F</a>
+				
+				<a name="A" href="#" onclick="disp('G')">G</a>
+				<a name="B" href="#" onclick="disp('H')">H</a>
+				<a name="C" href="#" onclick="disp('I')">I</a>
+				<a name="D" href="#" onclick="disp('J')">J</a>
+				<a name="E" href="#" onclick="disp('K')">K</a>
+				<a name="F" href="#" onclick="disp('L')">L</a>
 			</p>
 			<nav>
 				<p>
