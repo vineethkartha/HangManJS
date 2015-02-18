@@ -18,13 +18,20 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 		<script language="JavaScript">
 			var gameword
-			var words=["Chandrashekar Venkata Raman","Isaac Newton","Albert Einstein","Max Plank","Werner Heisenberg","Richard Feynamn"]
+			var words=["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia","Botswana","Brazil","Brunei","Bulgaria","Burkina","Burundi","Cambodia","Cameroon","Canada","Cape","Central","Chad","Chile","China","Colombia","Comoros","Congo","Congo","Costa","Croatia","Cuba","Cyprus","Czech","Denmark","Djibouti","Dominica","Dominican","East","Ecuador","Egypt","El","Equatorial","Eritrea","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Ivory","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Korea","Korea","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palau","Panama","Papua","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russian","Rwanda","St","St","Saint","Samoa","San","Sao","Saudi","Senegal","Serbia","Seychelles","Sierra","Singapore","Slovakia","Slovenia","Solomon","Somalia","South","South","Spain","Srilanka","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Trinidad","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United","United","United","Uruguay","Uzbekistan","Vanuatu","Vatican","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"]
 			var cont=" "
 			var dispword=[]
-			var turns=3;
+			var turns=5;
+			var flag=0;
+			var index=0;
+			var pic=1;
 			function displayword(){
-				var index=Math.floor(Math.random()*words.length)
-				turns=3;
+				
+				index=Math.floor(Math.random()*words.length)
+				turns=5;
+				//document.body.style.backgroundImage="url('pictures/background.jpeg')";
+				document.getElementById("name").style.color = "red";
+				document.getElementById("title").style.color = "magenta";
 				gameword=words[index]
 				
 				for(var i=0;i<gameword.length;i++)
@@ -37,24 +44,20 @@
 					else
 					{
 						dispword[i]='_';
-						//alert(gameword[i])
 					}
 				}
 				document.getElementById("name").innerHTML=dispword.join(' ');
 				
 			}
 			function disp(letter){
+				var count=0;
 				if(turns>0){
+					losflag=0;
 				for(var i=0;i<gameword.length;i++){
-					if(gameword[i].toUpperCase()!=letter)
-					{
-						turns=turns-1;
-						//alert(letter)
-					}
 					if(gameword[i].toUpperCase()==letter)
 					{
 						dispword[i]=letter
-						//alert(letter)
+						losflag=losflag+1;
 					}
 					else if(gameword[i]==' ')
 					{
@@ -69,6 +72,22 @@
 				{
 					document.getElementById("name").innerHTML="GAME OVER";
 				}
+				if(losflag==0){
+					turns=turns-1;
+					pic=pic+1;
+					if(pic<=7){
+						document.getElementById("hanged").setAttribute("src","pictures/"+pic.toString()+".gif");
+					}
+				}
+				for(var i=0;i<gameword.length;i++){
+					if(dispword[i]=='_'){
+						count=count+1;
+					}
+				}
+				if(count==0)
+				{
+					document.getElementById("name").innerHTML="YOU WON";
+				}
 				document.getElementById(letter).removeAttribute("onclick"); 
 				document.getElementById(letter).removeAttribute("href"); 
 				
@@ -76,17 +95,17 @@
 		</script>
 	</head>
 
-	<body>
-		<div>
+	<body onload="displayword()">
+		<div align="center">
 			<header>
-				<h1>Hangman JS</h1>
+				<h1 id="title">Hangman JS</h1>
 			</header>
-			<hr>
 			<p id="name"></p>
 			<p>
 				<form name="hangman">
-					<input type="button" name="click" value="New Word" onclick="displayword()"/>
+					<input type="button" name="click" value="New Word" onclick="window.location.reload();displayword()"/>
 				</form>
+				<img id="hanged" src="pictures/1.gif" />
 				<a  id="A" href="#" onclick="disp('A')">A</a>
 				<a  id="B" href="#" onclick="disp('B')">B</a>
 				<a  id="C" href="#" onclick="disp('C')">C</a>
@@ -119,14 +138,14 @@
 				<a  id="Z" href="#" onclick="disp('Z')">Z</a>
 			
 			</p>
-			<nav>
+			<!--<nav>
 				<p>
 					<a href="/">Home</a>
 				</p>
 				<p>
 					<a href="/contact">Contact</a>
 				</p>
-			</nav>
+			</nav> -->
 
 			<div>
 				<script language="JavaScript" src="bdetect.js">
