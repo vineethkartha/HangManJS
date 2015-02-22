@@ -43,29 +43,51 @@
         for the JavaScript code in this page.
         */
         </script>
-		<script language="JavaScript">
+		<script>
+			var timer;
 			var gameWord;
-			var countries=["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","BosniaHerzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina","Burundi","Cambodia","Cameroon","Canada","CapeVerde","CentralAfrican","Chad","Chile","China","Colombia","Comoros","Congo","Congo","CostaRica","Croatia","Cuba","Cyprus","CzechRepublic","Denmark","Djibouti","Dominica","DominicanRepublic","EastTimor","Ecuador","Egypt","ElSalvador","EquatorialGuinea","Eritrea","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","IvoryCoast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","KoreaNorth","KoreaSouth","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","MarshallIslands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","{Burma}","Namibia","Nauru","Nepal","Netherlands","NewZealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palau","Panama","PapuaNew","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","RussianFederation","Rwanda","StKitts","StLucia","SaintVincent","Samoa","SanMarino","SaoTome","SaudiArabia","Senegal","Serbia","Seychelles","SierraLeone","Singapore","Slovakia","Slovenia","SolomonIslands","Somalia","SouthAfrica","SouthSudan","Spain","SriLanka","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Trinidad","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","UnitedArab","UnitedKingdom","UnitedStates","Uruguay","Uzbekistan","Vanuatu","VaticanCity","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
-			var harryPotterCharacters=["Aberforth Dumbledore","Alastor Moody","Albus Dumbledore","Albus Severus","Alecto Carrow","Alice Longbottom","Alicia Spinnet","Amelia Bones","Amos Diggory","Amycus Carrow","Andromeda Tonks","Angelina Johnson","Antioch Peverell","Antonin Dolohov","Arabella Figg","Argus Filch","Ariana Dumbledore","Arthur Weasley","Augusta Longbottom","Augustus Rookwood","Bartemius Crouch","Bartemius Crouch","Bathilda Bagshot","Bathsheba Babbling","Bellatrix Lestrange","Blaise Zabini","Cadmus Peverell","Cedric Diggory","Charity Burbage","Charlie Weasley","Cho Chang","Colin Creevey","Cormac McLaggen","Cornelius Fudge","Cuthbert Binns","Dean Thomas","Dennis Creevey","Dilys Derwent","Dirk Cresswell","Dolores Umbridge","Draco Malfoy","Dudley Dursley","Ernie Macmillan","Everard ","Fenrir Greyback","Filius Flitwick","Fleur Delacour","Frank Bryce","Frank Longbottom","Fred Weasley","Gabrielle Delacour","Garrick Ollivander","Gellert Grindelwald","George Weasley","Gilderoy Lockhart","Ginevra Weasley","Godric Gryffindor","Gregory Goyle","Hannah Abbott","Harry Potter","Helena Ravenclaw","Helga Hufflepuff","Hepzibah Smith","Hermione Granger","Horace Slughorn","Ignotus Peverell","Igor Karkaroff","Irma Pince","James Potter","James Sirius","Justin Finch-Fletchley","Katie Bell","Kingsley Shacklebolt","Lavender Brown","Lee Jordan","Lily Luna","Lily Potter","Lucius Malfoy","Ludo Bagman","Luna Lovegood","Marietta Edgecombe","Marjorie Dursley","Marvolo Gaunt","Mary Cattermole","Mary Riddle","Merope Gaunt","Michael Corner","Millicent Bulstrode","Minerva McGonagall","Molly Weasley","Morfin Gaunt","Mundungus Fletcher","Narcissa Malfoy","Neville Longbottom","Newt Scamander","Nicolas Flamel","Nymphadora Tonks","Oliver Wood","Olympe Maxime","Padma Patil","Pansy Parkinson","Parvati Patil","Penelope Clearwater","Percy Weasley","Peter Pettigrew","Petunia Dursley","Pius Thicknesse","Pomona Sprout","Poppy Pomfrey","Quirinus Quirrell","Rabastan Lestrange","Reginald Cattermole","Regulus Arcturus","Remus Lupin","Rita Skeeter","Rodolphus Lestrange","Rolanda Hooch","Romilda Vane","Ronald Weasley","Rowena Ravenclaw","Rubeus Hagrid","Rufus Scrimgeour","Salazar Slytherin","Seamus Finnigan","Septima Vector","Severus Snape","Sirius Black","Stan Shunpike","Sturgis Podmore","Susan Bones","Sybill Patricia","Ted Tonks","Teddy Lupin","Theodore Nott","Vernon Dursley","Viktor Krum","Vincent Crabbe","Vincent Crabbe","Lord Voldemort","Wilhelmina Grubbly-Plank","William Weasley","Xenophilius Lovegood","Zacharias Smith"];
-			var cont=" ";
+			var country=["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","BosniaHerzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina","Burundi","Cambodia","Cameroon","Canada","CapeVerde","CentralAfrican","Chad","Chile","China","Colombia","Comoros","Congo","Congo","CostaRica","Croatia","Cuba","Cyprus","CzechRepublic","Denmark","Djibouti","Dominica","DominicanRepublic","EastTimor","Ecuador","Egypt","ElSalvador","EquatorialGuinea","Eritrea","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","IvoryCoast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","KoreaNorth","KoreaSouth","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","MarshallIslands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","{Burma}","Namibia","Nauru","Nepal","Netherlands","NewZealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palau","Panama","PapuaNew","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","RussianFederation","Rwanda","StKitts","StLucia","SaintVincent","Samoa","SanMarino","SaoTome","SaudiArabia","Senegal","Serbia","Seychelles","SierraLeone","Singapore","Slovakia","Slovenia","SolomonIslands","Somalia","SouthAfrica","SouthSudan","Spain","SriLanka","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Trinidad","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","UnitedArab","UnitedKingdom","UnitedStates","Uruguay","Uzbekistan","Vanuatu","VaticanCity","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+			var harryPotterCharacter=["Aberforth Dumbledore","Alastor Moody","Albus Dumbledore","Albus Severus","Alecto Carrow","Alice Longbottom","Alicia Spinnet","Amelia Bones","Amos Diggory","Amycus Carrow","Andromeda Tonks","Angelina Johnson","Antioch Peverell","Antonin Dolohov","Arabella Figg","Argus Filch","Ariana Dumbledore","Arthur Weasley","Augusta Longbottom","Augustus Rookwood","Bartemius Crouch","Bartemius Crouch","Bathilda Bagshot","Bathsheba Babbling","Bellatrix Lestrange","Blaise Zabini","Cadmus Peverell","Cedric Diggory","Charity Burbage","Charlie Weasley","Cho Chang","Colin Creevey","Cormac McLaggen","Cornelius Fudge","Cuthbert Binns","Dean Thomas","Dennis Creevey","Dilys Derwent","Dirk Cresswell","Dolores Umbridge","Draco Malfoy","Dudley Dursley","Ernie Macmillan","Everard ","Fenrir Greyback","Filius Flitwick","Fleur Delacour","Frank Bryce","Frank Longbottom","Fred Weasley","Gabrielle Delacour","Garrick Ollivander","Gellert Grindelwald","George Weasley","Gilderoy Lockhart","Ginevra Weasley","Godric Gryffindor","Gregory Goyle","Hannah Abbott","Harry Potter","Helena Ravenclaw","Helga Hufflepuff","Hepzibah Smith","Hermione Granger","Horace Slughorn","Ignotus Peverell","Igor Karkaroff","Irma Pince","James Potter","James Sirius","Justin Finch-Fletchley","Katie Bell","Kingsley Shacklebolt","Lavender Brown","Lee Jordan","Lily Luna","Lily Potter","Lucius Malfoy","Ludo Bagman","Luna Lovegood","Marietta Edgecombe","Marjorie Dursley","Marvolo Gaunt","Mary Cattermole","Mary Riddle","Merope Gaunt","Michael Corner","Millicent Bulstrode","Minerva McGonagall","Molly Weasley","Morfin Gaunt","Mundungus Fletcher","Narcissa Malfoy","Neville Longbottom","Newt Scamander","Nicolas Flamel","Nymphadora Tonks","Oliver Wood","Olympe Maxime","Padma Patil","Pansy Parkinson","Parvati Patil","Penelope Clearwater","Percy Weasley","Peter Pettigrew","Petunia Dursley","Pius Thicknesse","Pomona Sprout","Poppy Pomfrey","Quirinus Quirrell","Rabastan Lestrange","Reginald Cattermole","Regulus Arcturus","Remus Lupin","Rita Skeeter","Rodolphus Lestrange","Rolanda Hooch","Romilda Vane","Ronald Weasley","Rowena Ravenclaw","Rubeus Hagrid","Rufus Scrimgeour","Salazar Slytherin","Seamus Finnigan","Septima Vector","Severus Snape","Sirius Black","Stan Shunpike","Sturgis Podmore","Susan Bones","Sybill Patricia","Ted Tonks","Teddy Lupin","Theodore Nott","Vernon Dursley","Viktor Krum","Vincent Crabbe","Vincent Crabbe","Lord Voldemort","Wilhelmina Grubbly-Plank","William Weasley","Xenophilius Lovegood","Zacharias Smith"];
+			var oscarWinningMovie=["Titanic ","The Lord of the Rings: The Return of the King ","Ben-Hur ","West Side Story ","The English Patient ","Gigi ","The Last Emperor ","On the Waterfront ","Slumdog Millionaire ","Amadeus ","Gone with the Wind ","Gandhi ","My Fair Lady ","Cabaret ","From Here to Eternity ","Patton ","Shakespeare in Love ","Gravity ","Schindler's List ","The Sting ","The Bridge on the River Kwai ","Dances with Wolves ","Lawrence of Arabia ","Out of Africa ","Going My Way ","The Best Years of Our Lives ","The Godfather Part II ","Star Wars Episode IV: A New Hope ","The Hurt Locker ","A Man for All Seasons ","Chicago ","Forrest Gump ","All About Eve ","An American in Paris ","A Place in the Sun ","Mrs. Miniver ","The Deer Hunter ","The Silence of the Lambs ","One Flew Over the Cuckoo's Nest ","Saving Private Ryan ","Braveheart ","Kramer vs. Kramer ","Oliver! ","The Aviator ","Doctor Zhivago ","American Beauty ","Gladiator ","In the Heat of the Night ","Mary Poppins ","It Happened One Night ","The King and I ","The French Connection ","Around the World in 80 Days ","Who's Afraid of Virginia Woolf? ","The Bad and the Beautiful ","How Green Was My Valley ","Wilson ","Cleopatra ","Butch Cassidy and the Sundance Kid ","Million Dollar Baby ","E.T. the Extra-Terrestrial ","A Beautiful Mind ","Annie Hall ","A Streetcar Named Desire ","All the President's Men ","Hamlet ","Barry Lyndon ","Network ","All That Jazz ","Indiana Jones and the Raiders of the Lost Ark ","Chariots of Fire ","Ordinary People ","Fanny and Alexander ","Tom Jones ","The Right Stuff ","The Matrix ","Crouching Tiger Hidden Dragon ","The Departed ","Terminator 2: Judgment Day ","Marty ","Sayonara ","No Country for Old Men ","The Informer ","Anthony Adverse ","The Song of Bernadette ","High Noon ","The Heiress ","The Lost Weekend ","Traffic ","The Lord of the Rings: The Fellowship of the Ring ","The Curious Case of Benjamin Button ","Avatar ","The Bourne Ultimatum ","Pan's Labyrinth ","The Pianist ","Brokeback Mountain ","Twelve Years a Slave ","Dallas Buyer's Club ","Crash ","Memoirs of a Geisha ","Frozen ","King Kong ","The Great Gatsby ","The Dark Knight ","Up ","Precious: Based on the Novel Push by Sapphire ","Milk ","Crazy Heart ","There Will Be Blood ","Elizabeth: The Golden Age ","Inglourious Basterds ","Star Trek ","The Secret in Their Eyes ","Logorama ","The Young Victoria ","The Blind Side ","Music by Prudence ","The Cove ","The New Tenants ","The Duchess ","WALL-E ","Vicky Cristina Barcelona ","Man on Wire ","The Reader ","Departures ","Ratatouille ","Le Mozart des pickpockets ","Michael Clayton ","The Counterfeiters ","Juno ","Atonement ","La Vie en Rose ","Adaptation ","Monsters Inc. ","Freeheld ","Peter and the Wolf ","The Golden Compass ","Sweeney Todd: The Demon Barber of Fleet Street ","Taxi to the Dark Side ","Once ","Happy Feet ","An Inconvenient Truth ","The Last King of Scotland ","The Blood of Yingzhou District ","The Danish Poet ","West Bank Story ","The Lives of Others ","Pirates of the Caribbean: Dead Man's Chest ","Dreamgirls ","Marie Antoinette ","Little Miss Sunshine ","Girl Interrupted ","Letters from Iwo Jima ","Babel ","The Queen ","Capote ","Syriana ","A Note of Triumph: The Golden Age of Norman Corwin ","The Constant Gardener ","Walk the Line ","Wallace & Gromit: The Curse of the Were-Rabbit ","Six Shooter ","The Moon and the Son: An Imagined Conversation ","The Chronicles of Narnia: The Lion the Witch and the Wardrobe ","Tsotsi ","March of the Penguins ","Hustle & Flow ","Wasp ","Born into Brothels: Calcutta's Red Light Kids ","Lemony Snicket's A Series of Unfortunate Events ","Ray ","The Motorcycle Diaries ","Mighty Times: The Children's March ","Spider-Man 2 ","Finding Neverland ","Ryan ","Sideways ","Eternal Sunshine of the Spotless Mind ","The Sea Inside ","The Incredibles ","Mystic River ","The Barbarian Invasions ","Two Soldiers ","Master and Commander: The Far Side of the World ","Monster ","Cold Mountain ","Lost in Translation ","Harvie Krumpet ","The Fog of War: Eleven Lessons from the Life of Robert S. McNamara ","Chernobyl Heart ","Finding Nemo ","The Lord of the Rings: The Two Towers ","Twin Towers ","This Charming Man ","Spirited Away ","The ChubbChubbs! ","Road to Perdition ","The Hours ","Nowhere in Africa ","Bowling for Columbine "];
+			var choosenList; //Users option for which category to play for
 			var displayGameWord=[];//The Array used to display the word on the html document
 			var turns=5;  // NUmber of turns availalbe in a game
 			var flag=0;
 			var index=0; //The index to select a random word from the list of all words
 			var pic=1;   // variable to change the pictures as the game proceeds for the hangman
+			var wins=0;
+			var loss=0;
+			function loadBG(){
+				document.body.style.backgroundImage="url('pictures/background.jpeg')";
+			}
 			/**
 			 * Function to do random selection of a word from the list of words.
-			 * The math function random() is used to generate a random number in range 0 to length of the words list
+			 * The math function random() is used to generate a random number in range 0 to length of the words list. 
+			 * This function also resets the no. of turns the flag etc.
 			 * @param list - The list of words
 			 */
-			function selectWord(list){
+			function selectWord(list,category){
+				//window.location.reload();
+				choosenList=list;
+				clearInterval(timer);
 				index=Math.floor(Math.random()*list.length);
 				gameWord=list[index];
 				turns=5;
+				pic=1;
+				flag=0;
+				displayGameWord=[];
+				document.getElementById("hanged").setAttribute("src","pictures/"+pic.toString()+".gif");
+				displayWord();
+				document.getElementById("question").innerHTML="Guess the name of this "+category;
+				for (letter=65;letter<=90;letter++){
+					document.getElementById(String.fromCharCode(letter)).style.color="blue"; 
+				}
 			}
-			function displayWord(list){
-				selectWord(list);
-				//document.body.style.backgroundImage="url('pictures/background.jpeg')";
+			/**
+			 * Function to display the game word by replacing th words with _ 
+			 */
+			function displayWord(){
+				
 				document.getElementById("word").style.color = "red";
 				document.getElementById("title").style.color = "magenta";	
 				for(var i=0;i<gameWord.length;i++)
@@ -75,15 +97,22 @@
 					{
 						displayGameWord[i]='-' ;
 					}
+					else if(gameWord[i].toUpperCase().charCodeAt(0)<65||gameWord[i].toUpperCase().charCodeAt(0)>90){
+						displayGameWord[i]=gameWord[i];
+					}
 					else
 					{
+							
 						 displayGameWord[i]='__';
-						//displayGameWord[i]=String.fromCharCode(8212);
 					}
 				}
 				document.getElementById("word").innerHTML=displayGameWord.join(' ');
 				
 			}
+			/**
+			 * Function to select the letter for the word.
+			 * @param - letter which goes into the word and check whether it exits
+			 */
 			function disp(letter){
 				var count=0;
 				if(turns>0){
@@ -100,14 +129,14 @@
 					}
 					else if(displayGameWord[i]=='__')
 						displayGameWord[i]='__';
-					// else if(displayGameWord[i]==String.fromCharCode(8212))
-						// displayGameWord[i]=String.fromCharCode(8212);
 				}
 					document.getElementById("word").innerHTML=displayGameWord.join(' ');
 				}
 				else
 				{
 					document.getElementById("word").innerHTML="GAME OVER";
+					loss=loss+1;
+					timer=setInterval(function(){ selectWord(choosenList); }, 10000);
 				}
 				if(losflag==0){
 					turns=turns-1;
@@ -126,11 +155,13 @@
 				{
 					document.getElementById("word").innerHTML=gameWord;
 					document.getElementById("hanged").setAttribute("src","pictures/victory.gif");
+					wins=wins+1;
+					timer=setInterval(function(){ selectWord(choosenList); }, 10000);
 				}
-				document.getElementById(letter).removeAttribute("onclick"); 
-				document.getElementById(letter).removeAttribute("href"); 
+				//document.getElementById(letter).removeAttribute("onclick"); 
+				//document.getElementById(letter).removeAttribute("href"); 
 				document.getElementById(letter).style.color="white"; 
-				
+				document.getElementById("score").innerHTML="Wins: "+wins.toString()+" Loss: "+loss.toString();
 			} 
 		</script>
 	</head>
@@ -142,12 +173,15 @@
 				<div align="center">
 					Choose a category
 				</div>
-				<a href="#"><img alt="Countries" src="pictures/countries.jpg" title="select Country names" onclick="displayWord(countries)" width=100 height=100/></a>
-				<a href="#"><img alt="Harrypotter characters" src="pictures/hogwarts.gif" title="select Harry Potter Character names" onclick="displayWord(harryPotterCharacters)" width=100 height=100/></a><br/>
+				<a href="#"><img alt="Countries" src="pictures/countries.png" title="select Country names" onclick="selectWord(country,'Country')" width=100 height=100/></a>
+				<a href="#"><img alt="Harrypotter characters" src="pictures/hogwarts.gif" title="select Harry Potter Character names" onclick="selectWord(harryPotterCharacter,'Harry Potter Movie Character')" width=100 height=100/></a>
+				<a href="#"><img alt="Harrypotter characters" src="pictures/oscar.png" title="select Movies that have won oscar awards" onclick="selectWord(oscarWinningMovie,'Oscar Winning Movie')" width=50 height=100/></a><br/>
 			</p>
-			<a href="#"><img src="pictures/newgame.png" title="Refresh" onclick="window.location.reload();" width=80 height=40/></a><br/>
+			<p id="score"> </p>
+			<!-- <a href="#"><img src="pictures/newgame.png" title="Refresh" onclick="window.location.reload();" width=80 height=40/></a><br/> -->
 			<div align="center">
-			<p id="word"></p>
+				<p id="question"> </p>
+			<p id="word"> </p>
 			<p>
 				<!-- <form name="hangman">
 					<input type="button" name="click" value="New Word" onclick="window.location.reload();displayWord()"/>
@@ -198,6 +232,8 @@
 
 			<footer>
 				<p align="center">
+					<a href="https://github.com/vineethkartha/HangManJS">Source code</a>
+					<a href="mailto:vineeth.kartha@gmail.com?Subject=HangmanJS">contact me</a><br /><br />  
 					&copy; Copyright  by kartha
 				</p>
 			</footer>
