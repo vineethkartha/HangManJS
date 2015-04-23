@@ -1,0 +1,200 @@
+1. Titanic 
+2. The Lord of the Rings: The Return of the King 
+3. Ben-Hur 
+4. West Side Story 
+5. The English Patient 
+6. Gigi 
+7. The Last Emperor 
+8. On the Waterfront 
+9. Slumdog Millionaire 
+10. Amadeus 
+11. Gone with the Wind 
+12. Gandhi 
+13. My Fair Lady 
+14. Cabaret 
+15. From Here to Eternity 
+16. Patton 
+17. Shakespeare in Love 
+18. Gravity 
+19. Schindler's List 
+20. The Sting 
+21. The Bridge on the River Kwai 
+22. Dances with Wolves 
+23. Lawrence of Arabia 
+24. Out of Africa 
+25. Going My Way 
+26. The Best Years of Our Lives 
+27. The Godfather Part II 
+28. Star Wars Episode IV: A New Hope 
+29. The Hurt Locker 
+30. A Man for All Seasons 
+31. Chicago 
+32. Forrest Gump 
+33. All About Eve 
+34. An American in Paris 
+35. A Place in the Sun 
+36. Mrs. Miniver 
+37. The Deer Hunter 
+38. The Silence of the Lambs 
+39. One Flew Over the Cuckoo's Nest 
+40. Saving Private Ryan 
+41. Braveheart 
+42. Kramer vs. Kramer 
+43. Oliver! 
+44. The Aviator 
+45. Doctor Zhivago 
+46. American Beauty 
+47. Gladiator 
+48. In the Heat of the Night 
+49. Mary Poppins 
+50. It Happened One Night 
+51. The King and I 
+52. The French Connection 
+53. Around the World in 80 Days 
+54. Who's Afraid of Virginia Woolf? 
+55. The Bad and the Beautiful 
+56. How Green Was My Valley 
+57. Wilson 
+58. Cleopatra 
+59. Butch Cassidy and the Sundance Kid 
+60. Million Dollar Baby 
+61. E.T. the Extra-Terrestrial 
+62. A Beautiful Mind 
+63. Annie Hall 
+64. A Streetcar Named Desire 
+65. All the President's Men 
+66. Hamlet 
+67. Barry Lyndon 
+68. Network 
+69. All That Jazz 
+70. Indiana Jones and the Raiders of the Lost Ark 
+71. Chariots of Fire 
+72. Ordinary People 
+73. Fanny and Alexander 
+74. Tom Jones 
+75. The Right Stuff 
+76. The Matrix 
+77. Crouching Tiger Hidden Dragon 
+78. The Departed 
+79. Terminator 2: Judgment Day 
+80. Marty 
+81. Sayonara 
+82. No Country for Old Men 
+83. The Informer 
+84. Anthony Adverse 
+85. The Song of Bernadette 
+86. High Noon 
+87. The Heiress 
+88. The Lost Weekend 
+89. Traffic 
+90. The Lord of the Rings: The Fellowship of the Ring 
+91. The Curious Case of Benjamin Button 
+92. Avatar 
+93. The Bourne Ultimatum 
+94. Pan's Labyrinth 
+95. The Pianist 
+96. Brokeback Mountain 
+97. Twelve Years a Slave 
+98. Dallas Buyer's Club 
+99. Crash 
+100. Memoirs of a Geisha 
+101. Frozen 
+102. King Kong 
+103. The Great Gatsby 
+104. The Dark Knight 
+105. Up 
+106. Precious: Based on the Novel Push by Sapphire 
+107. Milk 
+108. Crazy Heart 
+109. There Will Be Blood 
+110. Elizabeth: The Golden Age 
+111. Inglourious Basterds 
+112. Star Trek 
+113. The Secret in Their Eyes 
+114. Logorama 
+115. The Young Victoria 
+116. The Blind Side 
+117. Music by Prudence 
+118. The Cove 
+119. The New Tenants 
+120. The Duchess 
+121. WALL-E 
+122. Vicky Cristina Barcelona 
+123. Man on Wire 
+124. The Reader 
+125. Departures 
+126. Ratatouille 
+127. Le Mozart des pickpockets 
+128. Michael Clayton 
+129. The Counterfeiters 
+130. Juno 
+131. Atonement 
+132. La Vie en Rose 
+133. Adaptation 
+134. Monsters Inc. 
+135. Freeheld 
+136. Peter and the Wolf 
+137. The Golden Compass 
+138. Sweeney Todd: The Demon Barber of Fleet Street 
+139. Taxi to the Dark Side 
+140. Once 
+141. Happy Feet 
+142. An Inconvenient Truth 
+143. The Last King of Scotland 
+144. The Blood of Yingzhou District 
+145. The Danish Poet 
+146. West Bank Story 
+147. The Lives of Others 
+148. Pirates of the Caribbean: Dead Man's Chest 
+149. Dreamgirls 
+150. Marie Antoinette 
+151. Little Miss Sunshine 
+152. Girl Interrupted 
+153. Letters from Iwo Jima 
+154. Babel 
+155. The Queen 
+156. Capote 
+157. Syriana 
+158. A Note of Triumph: The Golden Age of Norman Corwin 
+159. The Constant Gardener 
+160. Walk the Line 
+161. Wallace & Gromit: The Curse of the Were-Rabbit 
+162. Six Shooter 
+163. The Moon and the Son: An Imagined Conversation 
+164. The Chronicles of Narnia: The Lion the Witch and the Wardrobe 
+165. Tsotsi 
+166. March of the Penguins 
+167. Hustle & Flow 
+168. Wasp 
+169. Born into Brothels: Calcutta's Red Light Kids 
+170. Lemony Snicket's A Series of Unfortunate Events 
+171. Ray 
+172. The Motorcycle Diaries 
+173. Mighty Times: The Children's March 
+174. Spider-Man 2 
+175. Finding Neverland 
+176. Ryan 
+177. Sideways 
+178. Eternal Sunshine of the Spotless Mind 
+179. The Sea Inside 
+180. The Incredibles 
+181. Mystic River 
+182. The Barbarian Invasions 
+183. Two Soldiers 
+184. Master and Commander: The Far Side of the World 
+185. Monster 
+186. Cold Mountain 
+187. Lost in Translation 
+188. Harvie Krumpet 
+189. The Fog of War: Eleven Lessons from the Life of Robert S. McNamara 
+190. Chernobyl Heart 
+191. Finding Nemo 
+192. The Lord of the Rings: The Two Towers 
+193. Twin Towers 
+194. This Charming Man 
+195. Spirited Away 
+196. The ChubbChubbs! 
+197. Road to Perdition 
+198. The Hours 
+199. Nowhere in Africa 
+200. Bowling for Columbine 
